@@ -1,37 +1,31 @@
-import { Tabs } from 'expo-router';
+import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
+import { Tabs } from 'expo-router';
+import TabsIcon from '@/components/TabsIcon';
+import icons from '@/constants/icons';
 
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+const TabsLayout = () => {
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-      }}>
+    <Tabs>
       <Tabs.Screen
-        name="index"
+        name='home'
         options={{
           title: 'Home',
+          headerShown: false,
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <TabsIcon
+              name='Home'
+              color={color}
+              focused={focused}
+              icon={icons.home}
+            />
           ),
         }}
       />
     </Tabs>
   );
-}
+};
+
+export default TabsLayout;
+
+const styles = StyleSheet.create({});
