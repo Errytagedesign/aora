@@ -9,9 +9,9 @@ import CustomBtn from '@/components/CustomBtn';
 const index = () => {
   const router = useRouter();
   return (
-    <SafeAreaView className=' bg-black flex-1 items-center justify-center overflow-hidden h-full'>
+    <SafeAreaView className=' bg-black h-full'>
       <ScrollView contentContainerStyle={{ height: '100%' }}>
-        <View className='w-11/12 min-h-[85vh] items-center justify-center px-4'>
+        <View className='w-full min-h-[85vh] items-center justify-center px-4 '>
           <Image
             source={images.logo}
             className='w-[120px] h-[34px]'
@@ -19,7 +19,7 @@ const index = () => {
           />
           <Image
             source={images.cards}
-            className='w-[380px] h-[380px]'
+            className='w-full h-[380px]'
             resizeMode='contain'
           />
 
@@ -39,14 +39,13 @@ const index = () => {
             Exploration with Aora
           </Text>
           <CustomBtn
-            containerStyle='bg-pryColor w-full '
+            containerStyles='bg-pryColor w-full '
             title='Continue with Email'
             textStyle='font-semibold text-sm'
-            handlePress={() => router.push('/signup')}
+            handlePress={() => router.push('/signin')}
           />
         </View>
       </ScrollView>
-
       <StatusBar backgroundColor='#161622' style='light' />
     </SafeAreaView>
   );

@@ -4,8 +4,8 @@ import { Text, TouchableOpacity } from 'react-native';
 interface IBtn {
   title: string;
   handlePress: () => void;
-  textStyle: string;
-  containerStyle: string;
+  textStyle?: string;
+  containerStyles: string;
   isLoading?: boolean;
 }
 
@@ -13,12 +13,12 @@ const CustomBtn: FC<IBtn> = ({
   title,
   handlePress,
   textStyle,
-  containerStyle,
+  containerStyles,
   isLoading,
 }) => {
   return (
     <TouchableOpacity
-      className={`${containerStyle} bg-pryColor rounded-xl justify-center items-center min-h-[60px] ${
+      className={`${containerStyles} bg-pryColor rounded-xl justify-center items-center min-h-[60px] ${
         isLoading ? 'opacity-50' : ''
       }`}
       onPress={handlePress}

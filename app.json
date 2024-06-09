@@ -14,6 +14,7 @@
     },
     "ios": {
       "supportsTablet": true,
+      "package": "com.codeeq.aora",
 
       "infoPlist": {
         "UIStatusBarStyle": "UIStatusBarStyleLightContent",
@@ -24,7 +25,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.codeeq.aora"
     },
     "web": {
       "bundler": "metro",
