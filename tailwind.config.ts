@@ -8,6 +8,7 @@ module.exports = {
         pryColor: '#FF9001',
         white: '#fff',
         accent: '#FFA101',
+        grey1: '#CDCDE0',
       },
       fontFamily: {
         pthin: ['Poppins-Thin', 'sans-serif'],

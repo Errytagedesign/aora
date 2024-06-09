@@ -9,7 +9,7 @@ interface ITabIcons {
 }
 const TabsIcon: React.FC<ITabIcons> = ({ icon, color, name, focused }) => {
   return (
-    <View className='items-center justify-center gap-1'>
+    <View className='items-center justify-center gap-2'>
       <Image
         source={icon}
         resizeMode='contain'
@@ -17,7 +17,10 @@ const TabsIcon: React.FC<ITabIcons> = ({ icon, color, name, focused }) => {
         className='w-6 h-6'
       />
 
-      <Text className={focused ? 'font-psemibold' : 'font-pregular'}>
+      <Text
+        className={`${focused ? 'font-psemibold ' : 'font-pregular'} text-xs `}
+        style={{ color: color }}
+      >
         {name}
       </Text>
     </View>
