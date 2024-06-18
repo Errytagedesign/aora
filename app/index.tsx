@@ -1,13 +1,18 @@
 import React from 'react';
 import { Image, ScrollView, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { useRouter } from 'expo-router';
+import { Redirect, useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { images } from '@/constants';
 import CustomBtn from '@/components/CustomBtn';
+import { useGlobalContext } from '@/context/GlobalProvider';
 
 const index = () => {
+  const { loading, isLoggedIn } = useGlobalContext();
+
   const router = useRouter();
+
+  if (!loading && isLoggedIn) <Redirect href='/home' />;
   return (
     <SafeAreaView className=' bg-black h-full'>
       <ScrollView contentContainerStyle={{ height: '100%' }}>
