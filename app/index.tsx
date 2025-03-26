@@ -12,7 +12,7 @@ const index = () => {
 
   const router = useRouter();
 
-  if (!loading && isLoggedIn) <Redirect href='/home' />;
+  if (!loading && isLoggedIn) return <Redirect href='/home' />;
   return (
     <SafeAreaView className=' bg-black h-full'>
       <ScrollView contentContainerStyle={{ height: '100%' }}>

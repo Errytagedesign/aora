@@ -208,7 +208,7 @@ export async function getAllPosts() {
     );
 
     return posts.documents;
-  } catch (error) {
+  } catch (error: any) {
     throw new Error(error);
   }
 }
